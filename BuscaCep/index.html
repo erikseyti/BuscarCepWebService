@@ -1,0 +1,120 @@
+<html>
+   <head>
+       <title>LEO - CEP Webservice</title>
+       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+       <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+   </head>
+
+   <body>
+
+     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="#">Top navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1>Encontre CEP Webservices </h1>
+        <p class="lead">Insira o CEP desejado para pressione TAB para pesquisar os dados no sistema.</p>
+      </div>
+    </main>
+
+     <div class="container">
+          <!-- Content here -->
+          <form method="get" action=".">
+             <div class="form-row">
+               <div class="form-group col-md-4">
+                 <label for="cep">Cep</label>
+                 <input type="text" class="form-control" id="cep" name="cep" placeholder="CEP" >
+               </div>
+
+               <div class="form-group col-md-4">
+                 <label for="endereco">Endereço</label>
+                 <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço" readonly>
+               </div>
+
+               <div class="form-group col-md-4">
+                 <label for="bairro">Bairro</label>
+                 <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" readonly>
+               </div>
+             </div>
+
+             <div class="form-row">
+
+
+               <div class="form-group col-md-4">
+                 <label for="ibge">Código IBGE</label>
+                 <input type="text" class="form-control" id="ibge" name="ibge" placeholder="Código IBGE" readonly>
+               </div>
+
+               <div class="form-group col-md-4">
+                 <label for="cidade">Cidade</label>
+                 <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" readonly>
+               </div>
+
+               <div class="form-group col-md-4">
+                 <label for="uf">Estado</label>
+                 <input type="text" class="form-control" id="uf"  name="uf" placeholder="Estado" readonly>
+               </div>
+             </div>
+
+             <button type="button" class="btn btn-primary btn-md " onclick="Cep.searchCep()">Pesquisar CEP</button>
+             <button type="button" class="btn btn-success btn-md " onclick="Cep.addRow()">Salvar Registro</button>
+
+
+           </form>
+
+           <hr>
+
+           <table id class="table table-hover able-sm table-bordered table-striped">
+              <thead>
+                <tr class="table-active">
+                  <th scope="col">CEP</th>
+                  <th scope="col">ENDEREÇO</th>
+                  <th scope="col">BAIRRO</th>
+                  <th scope="col">IBGE</th>
+                  <th scope="col">CIDADE</th>
+                  <th scope="col">ESTADO</th>
+                </tr>
+              </thead>
+              <tbody id="table-result">
+              </tbody>
+          </table>
+
+     </div>
+
+
+     <!-- Adicionando JQuery -->
+     <script src="js/jquery-3.2.1.min.js" ></script>
+
+     <!-- Adicionando Javascript Bootstrap-->
+     <script src="bootstrap/js/bootstrap.min.js" ></script>
+
+     <!-- Adicionando Javascript -->
+     <script src="js/index.js" ></script>
+
+     <script>
+        var Cep = new Cep();
+     </script>
+   </body>
+</html>
