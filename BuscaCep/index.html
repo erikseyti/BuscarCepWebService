@@ -2,14 +2,13 @@
    <head>
        <title>LEO - CEP Webservice</title>
        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
    </head>
 
    <body>
 
      <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-      <a class="navbar-brand" href="#">Top navbar</a>
+      <a class="navbar-brand" href="#">Busca CEP</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -50,12 +49,12 @@
 
                <div class="form-group col-md-4">
                  <label for="endereco">Endereço</label>
-                 <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço" readonly>
+                 <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço" disabled="disabled">
                </div>
 
                <div class="form-group col-md-4">
                  <label for="bairro">Bairro</label>
-                 <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" readonly>
+                 <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" disabled="disabled">
                </div>
              </div>
 
@@ -64,23 +63,22 @@
 
                <div class="form-group col-md-4">
                  <label for="ibge">Código IBGE</label>
-                 <input type="text" class="form-control" id="ibge" name="ibge" placeholder="Código IBGE" readonly>
+                 <input type="text" class="form-control" id="ibge" name="ibge" placeholder="Código IBGE" disabled="disabled">
                </div>
 
                <div class="form-group col-md-4">
                  <label for="cidade">Cidade</label>
-                 <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" readonly>
+                 <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Cidade" disabled="disabled">
                </div>
 
                <div class="form-group col-md-4">
                  <label for="uf">Estado</label>
-                 <input type="text" class="form-control" id="uf"  name="uf" placeholder="Estado" readonly>
+                 <input type="text" class="form-control" id="uf"  name="uf" placeholder="Estado" disabled="disabled">
                </div>
              </div>
 
-             <button type="button" class="btn btn-primary btn-md " onclick="Cep.searchCep()">Pesquisar CEP</button>
-             <button type="button" class="btn btn-success btn-md " onclick="Cep.addRow()">Salvar Registro</button>
-
+             <button type="button" class="btn btn-primary btn-md " onclick="Cep.searchCep()"><i class="fas fa-search"></i> Pesquisar CEP</button>
+             <button type="button" class="btn btn-success btn-md " onclick="Cep.addRow()"><i class="fas fa-check"></i> Salvar Registro</button>
 
            </form>
 
@@ -113,7 +111,15 @@
      <!-- Adicionando Javascript -->
      <script src="js/index.js" ></script>
 
+     <!-- Adiciona uma mascara para os campos desejados -->
+     <script src="js/jquery.mask.min.js"></script>
+
+     <!-- Adicionado referencia para adicionar icones na aplicação -->
+      <link rel="stylesheet" href="fontawesome-free-5.3.1-web/css/all.css" />
+
      <script>
+
+
         var Cep = new Cep();
      </script>
    </body>
