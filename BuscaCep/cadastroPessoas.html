@@ -1,6 +1,6 @@
 <html>
    <head>
-       <title>Erik e LEO - CEP Webservice</title>
+       <title>Cadastro Pessoas</title>
        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
    </head>
@@ -8,17 +8,17 @@
    <body>
 
      <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-      <a class="navbar-brand" href="#">Busca CEP</a>
+      <a class="navbar-brand" href="#">Cadastro</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Buscar Cep <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="index.html">Buscar Cep<span class="sr-only"></span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="cadastroPessoas.html">Cadastro</a>
+            <a class="nav-link" href="#">Cadastro</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#">Disabled</a>
@@ -33,13 +33,51 @@
 
     <main role="main" class="container">
       <div class="jumbotron">
-        <h1>Encontre CEP Webservices </h1>
-        <p class="lead">Insira o CEP desejado para pressione TAB para pesquisar os dados no sistema.</p>
+        <h1>Cadastro de Clientes </h1>
+        <p class="lead">Cadastre-se gratuitamente no nosso site!</p>
       </div>
     </main>
 
      <div class="container">
           <!-- Content here -->
+
+          <div class="form-row">
+
+
+            <div class="form-group col-md-4">
+              <label for="nome">Nome Completo</label>
+              <input type="text" class="form-control" id="nome" name="nome" placeholder="nome">
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="nascimento">Data Nascimento</label>
+              <input type="text" class="form-control" id="nascimento" name="nascimento" placeholder="dd/mm/aaaaa">
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="telefone">Telefone</label>
+              <input type="text" class="form-control" id="telefone"  name="telefone" placeholder="telefone">
+            </div>
+          </div>
+
+          <div class="form-row">
+
+          <div class="form-group col-md-4">
+            <label for="celular">Celular</label>
+            <input type="text" class="form-control" id="celular" name="celular" placeholder="celular">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="nascimento">Email</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="email">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="senha">Senha</label>
+            <input type="password" class="form-control" id="senha"  name="senha" placeholder="senha">
+          </div>
+        </div>
+
           <form method="get" action=".">
              <div class="form-row">
                <div class="form-group col-md-4">
@@ -77,8 +115,8 @@
                </div>
              </div>
 
-             <button type="button" class="btn btn-primary btn-md " onclick="Cep.searchCep()"><i class="fas fa-search"></i> Pesquisar CEP</button>
-             <button type="button" class="btn btn-success btn-md " onclick="Cep.addRow()"><i class="fas fa-check"></i> Salvar Registro</button>
+             <button type="button" class="btn btn-primary btn-md " id="buscaCEP" onclick="Cep.searchCep()"><i class="fas fa-search"></i> Pesquisar CEP</button>
+             <button type="button" class="btn btn-success btn-md " id="salvarPessoa" onclick="Pessoa.addRow()"><i class="fas fa-check"></i> Salvar Registro</button>
 
            </form>
 
@@ -87,12 +125,12 @@
            <table id class="table table-hover able-sm table-bordered table-striped">
               <thead>
                 <tr class="table-active">
-                  <th scope="col">CEP</th>
+                  <th scope="col">NOME</th>
                   <th scope="col">ENDEREÇO</th>
-                  <th scope="col">BAIRRO</th>
-                  <th scope="col">IBGE</th>
-                  <th scope="col">CIDADE</th>
-                  <th scope="col">ESTADO</th>
+                  <th scope="col">EMAIL</th>
+                  <th scope="col">DATA NASCIMENTO</th>
+                  <th scope="col">TELEFONE</th>
+                  <th scope="col">CELULAR</th>
                 </tr>
               </thead>
               <tbody id="table-result">
@@ -120,7 +158,11 @@
      <script>
 
 
+
+
+
         var Cep = new Cep();
+        var Pessoa = new Pessoa();
      </script>
    </body>
 </html>
